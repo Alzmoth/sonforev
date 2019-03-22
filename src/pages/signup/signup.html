@@ -1,0 +1,48 @@
+<ion-content padding>
+<ion-list>
+
+  <ion-item>
+    <ion-label fixed>İsim</ion-label>
+    <ion-input type="text"  [(ngModel)]="userData.name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Email</ion-label>
+    <ion-input type="text"  [(ngModel)]="userData.email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Kullanici Adi</ion-label>
+    <ion-input type="text"  [(ngModel)]="userData.username"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Sifre</ion-label>
+    <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
+  </ion-item>
+
+  
+      <ion-item>
+        <ion-label>Sube</ion-label>
+        <ion-select [(ngModel)]="userData.sube"  >
+          <ion-option value="1">Busan-Merkez</ion-option>
+          <ion-option value="2">Pendik-İstanbul</ion-option>
+          <ion-option value="3">Manavgat-Antalya</ion-option>
+          <ion-option value="4">Toptancılar-Konya</ion-option>
+    
+        </ion-select>
+      </ion-item>
+  
+  
+
+ 
+  
+  
+
+</ion-list>
+
+<button ion-button block color="primary" (click)="signup()" >Kayit</button>
+<br>
+<button ion-button block color="primary" (click)="login()" >Giris ekrani</button>
+
+</ion-content>

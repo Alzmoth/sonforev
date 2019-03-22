@@ -1,0 +1,85 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{selectedUrun.stok_adi}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="card-background-page">
+
+
+  <ion-list >
+    
+    <ion-card >
+     
+<ion-card-content>
+     
+          <ion-item>
+            <ion-label floating>{{selectedUrun.olcu_birim}}:</ion-label>
+            <ion-input [(ngModel)]="selectedUrun.stok_adet" type="number" default =1 clearInput></ion-input>
+          </ion-item>
+
+        
+        <ion-row>
+          <ion-col col-5>
+            <div>
+              <strong> Urun Kodu : </strong>
+            </div>
+          </ion-col>
+          <ion-col col-auto>
+            <span> {{selectedUrun.stok_kodu}} </span>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-5>
+            <div>
+              <strong> Urun Adı : </strong>
+            </div>
+          </ion-col>
+          <ion-col col-auto>
+            <span> {{selectedUrun.stok_adi}} </span>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="selectedUrun.barkod!=0">
+          <ion-col col-5>
+            <div>
+              <strong> Barkod : </strong>
+            </div>
+          </ion-col>
+          <ion-col col-auto>
+            <span> {{selectedUrun.barkod}} </span>
+          </ion-col>
+        </ion-row>
+
+        <!-- <ion-row>
+          <ion-col col-5>
+            <div>
+              <strong> Urun Birimi : </strong>
+            </div>
+          </ion-col>
+         <ion-col col-auto>
+            <span> {{selectedUrun.stok_olcu_birim}} </span>
+          </ion-col> 
+        </ion-row> -->
+
+
+
+
+      </ion-card-content>
+    </ion-card>
+<div>
+  <button block ion-button (click)="addToCart(selectedUrun)">
+    <ion-icon name="basket"></ion-icon>
+  </button>
+</div>
+
+
+  </ion-list>
+
+
+</ion-content>
