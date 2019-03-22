@@ -9,7 +9,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-     <ion-title>Liste Detayı</ion-title>
+    <ion-title>Liste Detayı</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -23,10 +23,14 @@
     <ion-card padding>
 
       <span>
-        <b> Teklif Numarası: {{this.gelen.fatura_no}}</b>
-      </span>
+        Teklif Numarası: <b>{{this.gelen.fatura_no}}</b> - Tarih :
+        <b>{{saatcevir(this.gelen.fatura_tarih) |date: 'dd/MM/yyyy H:mm'}}
+        </b></span>
       <p>
         <span>Olusturan Kisi: {{this.gelen.username}} </span>
+      </p>
+      <p>
+        <span>Cari Adi: <b> {{this.gelen.cari_adi}}</b>  </span>
       </p>
       <p>
         <span> Toplam Urun Adedi: {{this.gelen.urun_adedi}} Adet </span>
@@ -37,7 +41,7 @@
         </span>
       </p>
       <p>
-        <span> {{saatcevir(this.gelen.fatura_tarih) |date: 'dd/MM/yyyy H:mm'}} </span>
+        <span> </span>
       </p>
       <p>
         <span *ngIf="this.gelen.aciklama!=null"> Liste Acıklaması: {{this.gelen.aciklama}} </span>
@@ -58,11 +62,12 @@
 
 
       <ion-label>
-       <button ion-item (click)="itemTapped($event,item)">Urun Adı: {{item.stok_adi}} </button>
-     
-        Iskontolu fiyat: {{item.stok_adet}} * {{ (item.satis_fiyati)-((item.satis_fiyati/100)*item.sabit_iskonto ) | denemee }} =
+        <button ion-item (click)="itemTapped($event,item)">Urun Adı: {{item.stok_adi}} </button>
+
+        Iskontolu fiyat: {{item.stok_adet}} *
+        {{ (item.satis_fiyati)-((item.satis_fiyati/100)*item.sabit_iskonto ) | denemee }} =
         {{item.stok_adet * (item.satis_fiyati-((item.satis_fiyati/100)*item.sabit_iskonto )) | denemee}} TL
-        
+
         <ion-row>
 
 
@@ -76,7 +81,8 @@
 
             <ion-item>
               <ion-label color="primary" class="inputstok">isk: </ion-label>
-              <ion-input style="font-weight: bold" type="number" [(ngModel)]="item.sabit_iskonto" clearInput></ion-input>
+              <ion-input style="font-weight: bold" type="number" [(ngModel)]="item.sabit_iskonto" clearInput>
+              </ion-input>
             </ion-item>
           </ion-col>
 
@@ -92,15 +98,15 @@
 
   <ion-grid>
 
-<ion-row>
-  <ion-col >
-    <button ion-button block color="marginTop" (click)="devamet()">Listeye Devam Et</button>
-  </ion-col>
-  <ion-col >
-    <button ion-button block color="marginTop" (click)="kaydet()">Kaydet</button>
-  </ion-col>
+    <ion-row>
+      <ion-col>
+        <button ion-button block color="marginTop" (click)="devamet()">Listeye Devam Et</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block color="marginTop" (click)="kaydet()">Kaydet</button>
+      </ion-col>
 
-</ion-row>
+    </ion-row>
 
 
     <ion-row>
@@ -114,7 +120,7 @@
       <ion-col>
         <button ion-button block class="lightprimary" (click)="sil()">Sil</button>
       </ion-col>
-    
+
     </ion-row>
   </ion-grid>
 

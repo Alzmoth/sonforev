@@ -238,7 +238,7 @@ openModal(){ // didmiss kullanırsan geç alır will dismis dersen hızlı alır
 
     more(event,urun ,item:ItemSliding) {
       console.log(urun);
-    urun.urun.stok_olcu_birim= urun.urun.olcu_birim
+      //urun.urun.stok_olcu_birim= urun.urun.olcu_birim
       this.navCtrl.push(SiparisUrunDetayPage, { item: urun.urun });
      
     }

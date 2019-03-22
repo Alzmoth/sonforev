@@ -16,15 +16,15 @@
   <ion-card *ngFor="let item of dataSet" (click)="itemTapped($event,item)">
     <ion-card-content>
 
-      <span>fatura No:
-        <b> {{item.fatura_no}}</b>
+      <span>Teklif No::
+        <b> {{item.fatura_no}} - {{saatCevir(item.fatura_tarih) |date: 'dd/MM/yyyy H:mm'}} </b>
       </span>
       <p>
         <span>Kayıt Eden: {{item.username}} </span>
       </p>
 
       <p>
-        <span> {{saatCevir(item.fatura_tarih) |date: 'dd/MM/yyyy H:mm'}} </span>
+        <span>Cari Adı : <b>{{item.cari_adi}}</b></span>
       </p>
       <p>
         <span *ngIf="item.aciklama!=null"> Liste Acıklaması: {{item.aciklama}} </span>

@@ -153,6 +153,7 @@ export class SiparisSepetProvider {
   }
 
   stokkayit(gelen) {
+    console.log("hello corccc")
     this.userPostData.toplam_fiyat= this.toplam_urun.toplam_fiyat;
     this.userPostData.urun_adedi=this.toplam_urun.toplam_urun_adet;
     this.userPostData.aciklama = gelen.aciklama;
